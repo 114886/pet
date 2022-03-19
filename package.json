@@ -5,6 +5,9 @@
     "dev": "vite",
     "build": "vite build"
   },
+  "resolutions": {
+    "node-sass": "npm:sass@1.26.11"
+  },
   "dependencies": {
     "axios": "^0.26.1",
     "vant": "^3.4.6",
@@ -15,6 +18,7 @@
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.0-rc.1",
     "vite": "^1.0.0-rc.1",
-    "vite-plugin-style-import": "1.4.1"
+    "vite-plugin-style-import": "1.4.1",
+    "sass": "1.32.11"
   }
 }

@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="xxx">
     {{ count }}
-    <p @click="handleSkip">跳转</p>
+    <p class="tiao" @click="handleSkip">跳转</p>
     <p @click="handleSkip2">点我</p>
     <van-button type="primary">主要按钮</van-button>
     <van-button type="success">成功按钮</van-button>
@@ -35,3 +35,11 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.xxx{
+  >.tiao{
+    color: red;
+  }
+}
+</style>
