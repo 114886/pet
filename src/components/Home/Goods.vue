@@ -177,17 +177,17 @@ export default {
     const images = reactive([
       {
         id: 1,
-        img: "http://r8xvotwyy.hn-bkt.clouddn.com/cat2.jpg",
+        img: "http://r8xvotwyy.hn-bkt.clouddn.com/cat16.jpg",
         name: "111",
       },
       {
         id: 2,
-        img: "http://r8xvotwyy.hn-bkt.clouddn.com/cat6.jpg",
+        img: "http://r8xvotwyy.hn-bkt.clouddn.com/cat19.jpg",
         name: "222",
       },
       {
         id: 3,
-        img: "http://r8xvotwyy.hn-bkt.clouddn.com/cat4.jpg",
+        img: "http://r8xvotwyy.hn-bkt.clouddn.com/cat18.jpg",
         name: "222",
       },
     ]);
