@@ -1,0 +1,25 @@
+{
+  "name": "Pet-platform-develop",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "resolutions": {
+    "node-sass": "npm:sass@1.26.11"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "vant": "^3.4.6",
+    "vue": "^3.0.0-rc.1",
+    "vue-router": "4.0.0-beta.3",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^6.0.0",
+    "@vue/compiler-sfc": "^3.0.0-rc.1",
+    "sass": "1.32.11",
+    "vite": "^1.0.0-rc.1",
+    "vite-plugin-style-import": "1.4.1"
+  }
+}
