@@ -7,6 +7,7 @@ import Vant from 'vant';
 import '../node_modules/vant/lib/index.css';
 import lazyPlugin from 'vue3-lazy'
 import Nav from './components/Nav.vue'
+import api from './utils/request'
 
 // 将store、router挂载到全局变量上, 方便使用
 import { useStore } from "vuex";
@@ -15,7 +16,8 @@ import { useRoute } from "vue-router";
 const app = createApp(App);
 app.config.globalProperties.$store = useStore();
 app.config.globalProperties.$router = useRoute();
-app.component('Nav', Nav)
+app.component('Nav', Nav);
+app.provide('$api', api);
 app.use(Vant);
 app.use(router);
 app.use(store);

@@ -1,24 +1,67 @@
-import axios from 'axios'
+//引入 axios
+import axios from "axios";
+import { ElMessage } from 'element-plus';
 
-async function request(url, options) {
-  // 创建 axios 实例
-  const service = axios.create({
-    baseURL: "", // api base_url
-    timeout: 6000 // 请求超时时间
-  });
-  // 请求拦截
-  service.interceptors.request.use(config => {
-    // 这里可设置请求头等信息
-    if (options && options.body) {
-      config.data = options.body;
+const api = axios.create({
+  baseURL: '/api',
+  timeout: 50000
+})
+
+// 数据请求拦截
+api.interceptors.request.use((config) => {
+
+  return config;
+}, (error) => {
+  return Promise.reject(error);
+});
+
+// 返回响应数据拦截
+api.interceptors.response.use((res) => {
+  const data = res.data;
+  // 状态码为 2xx 范围时都会调用该函数，处理响应数据
+  if (res.status === 200) {
+    const code = data.code;
+    return Promise.resolve(data);
+  }
+}, (error) => {
+  if (error.response.status) {
+    // 状态码超过 2xx 范围时都会调用该函数，处理错误响应
+    switch (error.response.status) {
+      case 404:
+        ElMessage({
+          type: 'error',
+          message: '请求路径找不到！',
+          showClose: true
+        });
+        break;
+      case 502:
+        ElMessage({
+          type: 'error',
+          message: '服务器内部报错！',
+          showClose: true
+        });
+        break;
+      default:
+        break;
     }
-    return config;
-  });
-  // 返回拦截
-  service.interceptors.response.use(response => {
-    // 这里可进行返回数据的格式化等操作
-    return response.data;
-  });
-  return service(url, options);
-}
-export default request;
+  }
+  return Promise.reject(error);
+});
+
+export default api;
+
+/*使用方式
+const $api = inject('$api')
+
+$api.get('/url').then(res => {
+  console.log(res);
+}).catch(error => {
+  console.log(error);
+});
+
+$api.post('/url', params).then(res => {
+  console.log(res);
+}).catch(error => {
+  console.log(error);
+});
+*/
