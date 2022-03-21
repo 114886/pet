@@ -66,7 +66,7 @@
 <script>
 import { reactive, ref, onMounted } from "vue";
 
-import request from "../../utils/request"
+import request from "../../utils/request";
 
 export default {
   setup() {
@@ -95,6 +95,6 @@ export default {
 };
 </script>
 
-<style>
+<style lang='scss' scoped>
 @import "./login.scss";
 </style>

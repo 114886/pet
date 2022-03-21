@@ -45,6 +45,14 @@
   <div class="container">
     <Goods></Goods>
   </div>
+  <van-sticky position="bottom">
+    <Nav></Nav>
+  </van-sticky>
+  <van-sticky :offset-bottom="70" position="bottom" @click="goTop">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-shengdanjianhuahuidaodingbu"></use>
+    </svg>
+  </van-sticky>
 </template>
 
 <script>
@@ -54,8 +62,11 @@ import Goods from "../components/Home/Goods.vue";
 export default {
   components: { Goods },
   setup() {
+    const goTop = () => {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    };
     const value = ref("");
-    return { value };
+    return { value, goTop };
   },
 };
 </script>
