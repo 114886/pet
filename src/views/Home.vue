@@ -9,8 +9,10 @@
           placeholder="搜索宠物或商家"
         />
       </van-col>
-      <van-col span="2" offset="8">
-        <van-icon name="share-o" size="25" />
+      <van-col span="2" offset="7">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-fenxiang"></use>
+        </svg>
       </van-col>
     </van-row>
     <van-row class="top-2" justify="space-around">
@@ -43,17 +45,28 @@
   <div class="container">
     <Goods></Goods>
   </div>
+  <van-sticky position="bottom">
+    <Nav></Nav>
+  </van-sticky>
+  <van-sticky :offset-bottom="70" position="bottom" @click="goTop">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-shengdanjianhuahuidaodingbu"></use>
+    </svg>
+  </van-sticky>
 </template>
 
 <script>
 import { ref } from "vue";
-import Goods from '../components/Home/Goods.vue';
+import Goods from "../components/Home/Goods.vue";
 
 export default {
   components: { Goods },
   setup() {
+    const goTop = () => {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    };
     const value = ref("");
-    return { value };
+    return { value, goTop };
   },
 };
 </script>

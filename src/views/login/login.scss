@@ -1,0 +1,133 @@
+html,body{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(120deg, #487eb0, #fbc531);
+  overflow: hidden;
+}
+
+.logo{
+  width: 100px;
+  height: 100px;
+}
+
+.container{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, .9);
+  border: 1px solid rgba(17, 39, 59, 1);
+  overflow: hidden;
+  box-sizing: border-box;
+  >.login-box{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(40, 61, 80, .9);
+    z-index: 1;
+    position: relative;
+  }
+  >.sign-box{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(53, 60, 68, .9);
+    z-index: 1;
+  }
+}
+input:focus{
+  box-shadow: 0 0 10px rgba(1,1,1,.8);
+  color: white;
+}
+.title{
+  position: relative;
+  padding-top: 10px;
+  height: 40px;
+  width: 100%;
+  font-size: 30px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+.left{
+  text-align: left;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 7px rgba(255, 255, 255, .9);
+}
+.right{
+  text-align: right;
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 0px 7px rgba(0,0,0,.9);
+}
+
+
+
+.text{
+  position: relative;
+  width: 300px;
+  height: 40px;
+  margin: 40px auto;
+}
+input{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, .4);
+  border-radius: 45px;
+}
+.btn{
+  height: 45px;     
+  width: 150px;
+  margin: -10px auto;
+  background-color: rgba(0,0,0,.3);
+  border-radius: 20px;
+  color: rgba(255, 255, 255, .7);
+  line-height: 45px;
+  text-shadow: 0px 0px 7px rgba(255, 255, 255, .9);
+}
+.block{
+  position: relative ;
+  bottom: -130px;
+  border-style: solid;
+  border-width: 100px 0 0 500px;
+  border-color:transparent transparent rgba(255, 255, 255,.3) rgba(255, 255, 255,.3);
+}
+.change{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  bottom: -70px;
+  left: 300px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .1);
+}
+.icon{
+  width: 50px;
+  height: 50px;
+}
+.container{
+  animation: animate 5s ease 1;
+  overflow: hidden;
+}
+@keyframes animate{
+ from {
+  height: 0px;
+  bottom : 500px;
+ }
+ to {
+   height: 503px;
+   bottom : 0;
+ }
+}
+.see-pwd{
+  position: relative;
+  right: -150px;
+  top: -28px;
+}
+.see{
+  width: 15px;
+  height: 15px;
+}
