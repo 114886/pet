@@ -22,3 +22,7 @@ async function request(url, options) {
   return service(url, options);
 }
 export default request;
+
+// request('',GET).then((data)=>{
+//   console.log(data);
+// })

@@ -13,6 +13,8 @@ import { useRoute } from "vue-router";
 const app = createApp(App);
 app.config.globalProperties.$store = useStore();
 app.config.globalProperties.$router = useRoute();
+
+
 app.use(Vant);
 app.use(router);
 app.use(store);
