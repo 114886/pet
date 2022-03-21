@@ -49,7 +49,7 @@
     <Nav></Nav>
   </van-sticky>
   <van-sticky :offset-bottom="70" position="bottom" @click="goTop">
-    <svg class="icon" aria-hidden="true">
+    <svg class="icon icon-xxx" aria-hidden="true">
       <use xlink:href="#icon-shengdanjianhuahuidaodingbu"></use>
     </svg>
   </van-sticky>
@@ -72,6 +72,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.icon-xxx {
+  padding-left: 15px;
+}
 .top-1 {
   padding-top: 25px;
   align-items: center;
