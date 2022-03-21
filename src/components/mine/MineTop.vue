@@ -176,7 +176,7 @@ const avatar = faker.image.avatar()
 const nickName = faker.name.findName()
 </script>
 
-<style scoped>
+<style lang='scss' scoped>
 
 .user {
     background-color: #FFFFCC;
