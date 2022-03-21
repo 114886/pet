@@ -9,8 +9,10 @@
           placeholder="搜索宠物或商家"
         />
       </van-col>
-      <van-col span="2" offset="8">
-        <van-icon name="share-o" size="25" />
+      <van-col span="2" offset="7">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-fenxiang"></use>
+        </svg>
       </van-col>
     </van-row>
     <van-row class="top-2" justify="space-around">
@@ -47,7 +49,7 @@
 
 <script>
 import { ref } from "vue";
-import Goods from '../components/Home/Goods.vue';
+import Goods from "../components/Home/Goods.vue";
 
 export default {
   components: { Goods },
