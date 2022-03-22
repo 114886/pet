@@ -7,6 +7,8 @@ import Vant from 'vant';
 import '../node_modules/vant/lib/index.css';
 import lazyPlugin from 'vue3-lazy'
 import Nav from './components/Nav.vue'
+import Top from './components/Top.vue'
+import Page from './components/Home/Page.vue'
 import api from './utils/request'
 
 // 将store、router挂载到全局变量上, 方便使用
@@ -17,6 +19,8 @@ const app = createApp(App);
 app.config.globalProperties.$store = useStore();
 app.config.globalProperties.$router = useRoute();
 app.component('Nav', Nav);
+app.component('Top', Top);
+app.component('Page', Page);
 app.provide('$api', api);
 app.use(Vant);
 app.use(router);
