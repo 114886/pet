@@ -16,25 +16,25 @@
       </van-col>
     </van-row>
     <van-row class="top-2" justify="space-around">
-      <van-col span="3">
+      <van-col @click="go(0)" span="3">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-fujin1"></use>
         </svg>
         <span>附近</span>
       </van-col>
-      <van-col span="3">
+      <van-col @click="go(1)" span="3">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-007-cat"></use>
         </svg>
         <span>猫咪</span>
       </van-col>
-      <van-col span="3">
+      <van-col @click="go(2)" span="3">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-gougou-"></use>
         </svg>
         <span>狗狗</span>
       </van-col>
-      <van-col span="3">
+      <van-col @click="go(3)" span="3">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-tuzi"></use>
         </svg>
@@ -56,17 +56,29 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, getCurrentInstance } from "vue";
 import Goods from "../components/Home/Goods.vue";
 
 export default {
   components: { Goods },
   setup() {
+    const { proxy } = getCurrentInstance();
+    const go = (e) => {
+      let text = ref("附近");
+      if (e === 1) {
+        text.value = "猫咪";
+      } else if (e === 2) {
+        text.value = "狗狗";
+      } else if (e === 3) {
+        text.value = "异宠";
+      }
+      proxy.$router.push({ path: "/petchoose", query: { name: text.value } });
+    };
     const goTop = () => {
       document.body.scrollTop = document.documentElement.scrollTop = 0;
     };
     const value = ref("");
-    return { value, goTop };
+    return { value, goTop, go };
   },
 };
 </script>

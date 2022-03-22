@@ -9,5 +9,7 @@ export const router = createRouter({
     { path: '/protocol', component: () => import('./views/common/Protocol.vue')},
     { path: "/home", component: () => import('./views/Home.vue') },
     { path: "/login", component: () => import('./views/Login.vue') },
+    { path: "/choose", component: () => import('./views/Goodchoose/HomeGoods.vue') },
+    { path: "/petchoose", component: () => import('./views/Goodchoose/Petchoose.vue') },
   ],
 });
