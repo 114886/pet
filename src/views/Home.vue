@@ -4,16 +4,22 @@
       <van-col span="12" offset="1">
         <van-search
           shape="round"
-          v-model="value"
           background="transparent"
           placeholder="搜索宠物或商家"
+          @click="go(4)"
         />
       </van-col>
-      <van-col span="2" offset="7">
+      <van-col @click="showShare = true" span="2" offset="7">
         <svg class="icon" aria-hidden="true">
           <use xlink:href="#icon-fenxiang"></use>
         </svg>
       </van-col>
+      <van-share-sheet
+        v-model:show="showShare"
+        title="立即分享给好友"
+        :options="options"
+        @select="onSelect"
+      />
     </van-row>
     <van-row class="top-2" justify="space-around">
       <van-col @click="go(0)" span="3">
@@ -57,11 +63,31 @@
 
 <script>
 import { ref, getCurrentInstance } from "vue";
+import { Toast } from "vant";
 import Goods from "../components/Home/Goods.vue";
 
 export default {
   components: { Goods },
   setup() {
+    const showShare = ref(false);
+    const onSelect = (option) => {
+      Toast(option.name);
+      showShare.value = false;
+    };
+    const options = [
+      [
+        { name: "微信", icon: "wechat" },
+        { name: "朋友圈", icon: "wechat-moments" },
+        { name: "微博", icon: "weibo" },
+        { name: "QQ", icon: "qq" },
+      ],
+      [
+        { name: "复制链接", icon: "link" },
+        { name: "分享海报", icon: "poster" },
+        { name: "二维码", icon: "qrcode" },
+        { name: "小程序码", icon: "weapp-qrcode" },
+      ],
+    ];
     const { proxy } = getCurrentInstance();
     const go = (e) => {
       let text = ref("附近");
@@ -71,14 +97,16 @@ export default {
         text.value = "狗狗";
       } else if (e === 3) {
         text.value = "异宠";
+      } else if (e === 4) {
+        proxy.$router.push("/search");
+        return;
       }
       proxy.$router.push({ path: "/petchoose", query: { name: text.value } });
     };
     const goTop = () => {
       document.body.scrollTop = document.documentElement.scrollTop = 0;
     };
-    const value = ref("");
-    return { value, goTop, go };
+    return { goTop, go, options, showShare, onSelect };
   },
 };
 </script>

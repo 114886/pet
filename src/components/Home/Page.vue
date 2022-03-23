@@ -1,5 +1,5 @@
 <template>
-  <van-sticky :offset-top="49">
+  <van-sticky class="xxx_van" :offset-top="49">
     <van-dropdown-menu active-color="#1989fa">
       <van-dropdown-item v-model="value1" :options="option1" />
       <van-dropdown-item v-model="value2" :options="option2" />
