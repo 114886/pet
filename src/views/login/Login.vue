@@ -1,12 +1,15 @@
 <template>
-  <div><img src="./pet.png" class="logo" alt="" /></div>
+<div class="content-1">
+  <div class="logo">
+    <img src="./img/pet.png" alt="" />
+  </div>
   <div class="container">
     <div class="login-box" v-show="isShow">
       <div class="title left">Login</div>
       <div class="text">
         <input
           type="text"
-          id="login-user"
+          class="input"
           placeholder="Input your username"
           v-model="loginName"
         />
@@ -14,20 +17,20 @@
       <div class="text">
         <input
           type="password"
-          id="login-password"
+          class="input"
           placeholder="Input your password"
           v-model="loginPwd"
         />
         <span class="see-pwd" @click="changeType">
-          <img src="./see.png" class="see" alt="" />
+          <img src="./img/see.png" class="see" alt="" />
         </span>
       </div>
-      <div class="btn login-btn" @click="login">
+      <div class="btn" @click="login">
         <span>登录</span>
       </div>
       <div class="block"></div>
       <div class="change" @click="changeItem">
-        <img src="./change.png" class="icon" alt="" />
+        <img src="./img/change.png" class="icon" alt="" />
       </div>
     </div>
 
@@ -36,7 +39,7 @@
       <div class="text">
         <input
           type="text"
-          id="sign-user"
+          class="input"
           placeholder="Have A Good Name?"
           v-model="signName"
         />
@@ -44,23 +47,25 @@
       <div class="text">
         <input
           type="password"
-          id="sign-password"
+          class="input"
           placeholder="Keep Secret"
           v-model="signPwd"
         />
         <span class="see-pwd" @click="changeType">
-          <img src="./see.png" class="see" alt="" />
+          <img src="./img/see.png" class="see" alt="" />
         </span>
       </div>
-      <div class="btn sign-btn" @click="sign">
+      <div class="btn" @click="sign">
         <span>注册</span>
       </div>
       <div class="block"></div>
-      <div class="change" @click="changeItem">
-        <img src="./change.png" class="icon" alt="" />
+      <div class="icon" @click="changeItem">
+        <img src="./img/change.png" alt="" />
       </div>
     </div>
   </div>
+</div>
+  
 </template>
 
 <script>
@@ -95,6 +100,6 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
-@import "./login.scss";
+<style scoped>
+@import "./login.css";
 </style>
