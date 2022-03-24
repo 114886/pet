@@ -11,8 +11,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.icon {
-  padding-left: 15px;
-}
+
 </style>
 

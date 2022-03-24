@@ -4,7 +4,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon {
-  width: 3em; height: 3em;
+  width: 3rem; height: 3rem;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
